@@ -7,9 +7,10 @@ import { Observable } from 'rxjs';
 })
 export class CarServiceService {
   uploadedCarId:any
+  carByUser:string="http://localhost:8083/get/car"
   carTypeUrl:string = "http://localhost:8083/api/get/car/type"
   carPurposeUrl:string = "http://localhost:8083/api/get/car/purpose"
-  carUrl:string="http://localhost:8083/get/available/cars"
+  carUrl:string="http://localhost:8083/api/get/car/image"
   uploadCarUrl:string="http://localhost:8083/add/car/"
   getCarUrl:string="http://localhost:8083/api/get/car"
   getCarV2:string="http://localhost:8083/get/available/cars/v2"
@@ -80,6 +81,15 @@ getCarsV2(state:any,city:any):Observable<any>{
 
 }
 
-
+getCarByUser(id:any):Observable<any>{
+  const HttpOptions=
+  {
+    headers: new HttpHeaders({
+      Authorization: 'Bearer '+ localStorage.getItem('token')
+   })
+  
+  }
+  return this.http.get(this.carByUser+'/'+id,HttpOptions)
+}
 
 }

@@ -1,37 +1,29 @@
-<nav>
-    <div class="profile-info text-center">
-        <img src="https://via.placeholder.com/100" alt="User Avatar" class="img-fluid rounded-circle mb-3">
-        <h4>{{name}}</h4>
-        <p><strong>username:</strong> {{username}}</p>
-        <p><strong>Role:</strong>{{role}}</p>
-      </div>
+<div class="sidebar">
+  <div class="profile-info text-center">
+      <img src="https://via.placeholder.com/100" alt="User Avatar" class="img-fluid rounded-circle mb-3">
+      <h4>{{name}}</h4>
+      <p><strong>Username:</strong> {{username}}</p>
+      <p><strong>Role:</strong> {{role}}</p>
+  </div>
 
-      <ul class="list-group">
-        <li class="list-group-item"> <a routerLink='update' >
-            <i class="fa fa-home"></i>
-            <strong>Update User Details</strong>
-             
-        </a>
-    </li>
-        <li class="list-group-item"><a [routerLink]="['booking-history']" >
-            <i class="fa fa-home"></i>
-            <strong>User booking's history</strong>
-             
-        </a>
-    </li>
-        <li class="list-group-item"><a [routerLink]="['add-car']">
-            <i class="fa fa-home"></i>
+  <ul class="list-group">
+      <li class="list-group-item">
+          <a routerLink='update' class="sidebar-link">
+              <i class="fa fa-user"></i>
+              <strong>Update User Details</strong>
+          </a>
+      </li>
+      <li class="list-group-item">
+          <a [routerLink]="['booking-history']" class="sidebar-link">
+              <i class="fa fa-history"></i>
+              <strong>User Booking History</strong>
+          </a>
+      </li>
+      <li class="list-group-item">
+        <a routerLink="renter-login" class="sidebar-link">
+            <i class="fa fa-history"></i>
             <strong>Rent Car</strong>
-             
         </a>
     </li>
-        <li class="list-group-item"><a [routerLink]="['available-car']">
-            <i class="fa fa-home"></i>
-            <strong>Car list</strong>
-             
-        </a></li>
-      </ul>
-      
-    
-</nav>
-
+  </ul>
+</div>

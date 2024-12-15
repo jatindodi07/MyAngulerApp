@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { CarServiceService } from '../../services/car-service.service';
 import { NgIf } from '@angular/common';
 import { BookingService } from '../../services/booking.service';
@@ -12,6 +12,12 @@ import { BookingService } from '../../services/booking.service';
   styleUrl: './search.component.css'
 })
 export class SearchComponent {
+isPickupBeforeDrop():Boolean {
+  const pickupDate = new Date(this.availibilityForm.value.pickupDate);
+  const dropDate = new Date(this.availibilityForm.value.dropDate);
+
+  return pickupDate < dropDate;
+}
   availibilityForm :FormGroup
   mssg:string="";
   book:boolean=false
@@ -20,7 +26,7 @@ export class SearchComponent {
   bookingMssg:string=""
   rentalPrice:any
   totalPrice:any
-  constructor(private carService:CarServiceService,private  bookingService:BookingService){
+  constructor(private carService:CarServiceService,private  bookingService:BookingService,private route:Router){
     this.availibilityForm = new FormGroup({
       pickupDate:new FormControl('',Validators.required),
       dropDate:new FormControl('',Validators.required),
@@ -49,9 +55,6 @@ let dropDate = new Date(this.availibilityForm.value.dropDate);
 let diffInTime = dropDate.getTime() - pickupDate.getTime(); 
   let diffInDays = diffInTime / (1000 * 60 * 60 * 24); 
   this.totalPrice = diffInDays * this.rentalPrice;
-
-  
-
 },
 error:(err)=>{
 
@@ -71,7 +74,8 @@ confirmBooking(){
   }   
   ).subscribe({
     next:(data)=>{
-      this.bookingMssg="Booking Confirmed"
+      console.log(data)
+    this.route.navigateByUrl('home-page/passenger/'+data.booking_id)
     },
     error:(err)=>{}
   })

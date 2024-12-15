@@ -12,7 +12,7 @@ import { SearchComponent } from "../search/search.component";
   styleUrl: './car-list.component.css'
 })
 export class CarListComponent implements OnInit {
-  carData:any[]=[]
+  carData:any
   inputLocationForm:FormGroup
 
 constructor(private carService:CarServiceService){
@@ -29,6 +29,7 @@ constructor(private carService:CarServiceService){
   this.carService.getCars(localStorage.getItem('token')).subscribe({
     next: (data)=>{
       this.carData=data
+
      },
      error:(err)=>{
      }

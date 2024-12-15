@@ -13,7 +13,14 @@ import { CarDetailsComponent } from './components/car-details/car-details.compon
 import { AvailabilityComponent } from './components/availability/availability.component';
 import { CarComponent } from './pages/car/car.component';
 import { DetailComponent } from './components/detail/detail.component';
-import { BookingComponent } from './components/booking/booking.component';
+import { PassengerComponent } from './components/passenger/passenger.component';
+import { RenterhomeComponent } from './pages/renterhome/renterhome.component';
+import { RentercarComponent } from './components/rentercar/rentercar.component';
+import { CarHistoryComponent } from './components/car-history/car-history.component';
+import { RenterCarPageComponent } from './pages/renter-car-page/renter-car-page.component';
+import { RenterLoginComponent } from './components/renter-login/renter-login.component';
+import { BookingComponent } from './pages/booking/booking.component';
+
 
 export const routes: Routes = [
     {
@@ -28,15 +35,38 @@ export const routes: Routes = [
         path:"sign-up", component:SighnUpPageComponent
     },
     {
+         path:'renter-page', component:RenterhomeComponent,children:[{
+            
+                path:'add-car', component : AddCarComponent,children:[{
+                    path:'', component :CarDetailsComponent
+                },
+                {
+                    path:'upload-photos',component:CarPicsComponent
+                }]
+            
+         },
+        {
+           path:'car-list', component:RenterCarPageComponent,children:[
+            {
+                path:'',component:RentercarComponent
+            },
+            {
+                path:'car-history/:id',component:CarHistoryComponent
+            }
+           ]
+        }
+        
+    ]
+    },
+
+    {
         path:"home-page",component:HomePageComponent,children:[
             {
                 path:'', component : CarListComponent
             },
             {
-                path:'available',component:AvailabilityComponent
-            },
-            {
-                path:'booking',component:BookingComponent
+                path:'available',component:AvailabilityComponent,
+                 
             },
             {
                 path:'detail',component:DetailComponent
@@ -45,16 +75,20 @@ export const routes: Routes = [
                 path:'update', component : UpdateComponent
             },
             {
-                path:'booking-history', component : BookingHistoryComponent
+                path:'booking-history', component : BookingComponent,children:[{
+                    path:'',component:BookingHistoryComponent
+                }
+            
+        ]
             },
             {
-                path:'add-car', component : AddCarComponent,children:[{
-                    path:'', component :CarDetailsComponent
-                },
-                {
-                    path:'upload-photos',component:CarPicsComponent
-                }]
+                path:'renter-login',component:RenterLoginComponent
+            },
+            {
+                path:'passenger/:id',component:PassengerComponent
+
             }
+           
         ]
 
     }

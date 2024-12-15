@@ -35,9 +35,12 @@ this.authService.getToken({
       let role = data.role;
       switch(role){
         case 'CUSTOMER':
-          //console.log('i vl take you to customer screen');
+         
           this.router.navigateByUrl("/home-page");
           break; 
+        case 'RENTER':
+          this.router.navigateByUrl("/renter-page");
+          break;
       }
    },
    error: (err)=>{

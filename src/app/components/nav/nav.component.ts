@@ -13,4 +13,8 @@ export class NavComponent {
   constructor(private router: Router){
     this.name = localStorage.getItem('username');
   }
+  loggingOut(){
+    localStorage.clear()
+    this.router.navigateByUrl('')
+  }
 }

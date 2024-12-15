@@ -1,0 +1,320 @@
+/* Wrapper to hold sidebar and main content */
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width: 250px;
+  background-color: #1f2937; /* Dark background */
+  color: #fff;
+  padding-top: 20px;
+  box-shadow: 3px 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Profile Info Styling */
+.profile-info {
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 30px;
+  background-color: #334153; /* Slightly lighter background */
+}
+
+.profile-info img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.profile-info h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.profile-info p {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: #d1d5db; /* Lighter color for text */
+}
+
+/* Sidebar Links */
+ul.list-group {
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 0;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.sidebar-link i {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.sidebar-link:hover {
+  background-color: #3a4b61; /* Slightly lighter shade on hover */
+  cursor: pointer;
+}
+
+/* Main Content Styling */
+.content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f4f5f7; /* Light background for content */
+  margin-left: 250px; /* Adjust the content for the fixed sidebar */
+  transition: margin-left 0.3s ease;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Responsiveness for smaller screens */
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+  }
+
+  .content {
+    margin-left: 0;
+  }
+}
+/* Wrapper to hold sidebar and main content */
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width: 250px;
+  background-color: #1f2937; /* Dark background */
+  color: #fff;
+  padding-top: 20px;
+  box-shadow: 3px 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Profile Info Styling */
+.profile-info {
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 30px;
+  background-color: #334153; /* Slightly lighter background */
+}
+
+.profile-info img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.profile-info h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.profile-info p {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: #d1d5db; /* Lighter color for text */
+}
+
+/* Sidebar Links */
+ul.list-group {
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 0;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.sidebar-link i {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.sidebar-link:hover {
+  background-color: #3a4b61; /* Slightly lighter shade on hover */
+  cursor: pointer;
+}
+
+/* Main Content Styling */
+.content {
+  flex: 1;
+  padding: 20px;
+  background-color: #f4f5f7; /* Light background for content */
+  margin-left: 250px; /* Adjust the content for the fixed sidebar */
+  transition: margin-left 0.3s ease;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Responsiveness for smaller screens */
+@media (max-width: 768px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+  }
+
+  .content {
+    margin-left: 0;
+  }
+}
+/* Base button styles */
+button.btn-outline-primary:hover {
+  background-color: #007bff;
+  color: white;
+  transform: translateY(-2px);
+}
+
+button.btn-outline-secondary {
+  background-color: transparent;
+  color: #6c757d;
+  border-color: #6c757d;
+}
+
+button.btn-outline-secondary:hover {
+  background-color: #6c757d;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Disabled Button */
+button:disabled {
+  background-color: #e0e0e0;
+  color: #aaa;
+  border-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+/* Base button styles */
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  position: relative; /* To allow for absolute positioning of text */
+}
+
+/* Primary Button */
+button.btn-primary {
+  background-color: #007bff; /* Blue color */
+  color: white;
+  border-color: #007bff;
+}
+
+button.btn-primary:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  border-color: #0056b3;
+  transform: translateY(-2px); /* Lift effect on hover */
+}
+
+button.btn-primary:hover .btn-text {
+  color: #ffd700; /* Gold color for text */
+  text-shadow: 0px 0px 10px rgba(255, 215, 0, 0.7); /* Text shadow effect */
+}
+
+/* Secondary Button */
+button.btn-secondary {
+  background-color: #6c757d; /* Gray color */
+  color: white;
+  border-color: #6c757d;
+}
+
+button.btn-secondary:hover {
+  background-color: #5a6268; /* Darker gray on hover */
+  border-color: #545b62;
+  transform: translateY(-2px);
+}
+
+button.btn-secondary:hover .btn-text {
+  color: #ffd700;
+  text-shadow: 0px 0px 10px rgba(255, 215, 0, 0.7);
+}
+
+/* Success Button */
+button.btn-success {
+  background-color: #28a745; /* Green color */
+  color: white;
+  border-color: #28a745;
+}
+
+button.btn-success:hover {
+  background-color: #218838; /* Darker green on hover */
+  border-color: #1e7e34;
+  transform: translateY(-2px);
+}
+
+button.btn-success:hover .btn-text {
+  color: #ffd700;
+  text-shadow: 0px 0px 10px rgba(255, 215, 0, 0.7);
+}
+
+/* Danger Button */
+button.btn-danger {
+  background-color: #dc3545; /* Red color */
+  color: white;
+  border-color: #dc3545;
+}
+
+button.btn-danger:hover {
+  background-color: #c82333; /* Darker red on hover */
+  border-color: #bd2130;
+  transform: translateY(-2px);
+}
+
+button.btn-danger:hover .btn-text {
+  color: #ffd700;
+  text-shadow: 0px 0px 10px rgba(255, 215, 0, 0.7);
+}
+
+/* Outline Button */
+button.btn-outline-primary {
+  background-color: transparent;
+  color: #007bff;
+  border-color: #007bff;
+}
+
