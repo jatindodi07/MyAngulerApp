@@ -21,5 +21,9 @@ export class BookingHistoryComponent implements OnInit{
       error:(err)=>{}
     })
   }
+  saveBookingId(id:any){
+    console.log(id)
+    localStorage.setItem('booking_id',id)
+  }
 
 }

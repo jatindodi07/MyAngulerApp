@@ -27,7 +27,7 @@
                     <td>{{bd.pickup_date}}</td>
                     <td>{{bd.return_date}}</td>
                     <td>{{bd.price}}</td>
-                    <td><a routerLink="passenger" class="btn btn-primary">Add Passenger</a></td>
+                    <td><a routerLink="passenger-list" class="btn btn-primary" (click)="saveBookingId(bd.booking_id)">See Passenger</a></td>
                   </tr>
                 </tbody>
               </table>

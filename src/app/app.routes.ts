@@ -20,6 +20,7 @@ import { CarHistoryComponent } from './components/car-history/car-history.compon
 import { RenterCarPageComponent } from './pages/renter-car-page/renter-car-page.component';
 import { RenterLoginComponent } from './components/renter-login/renter-login.component';
 import { BookingComponent } from './pages/booking/booking.component';
+import { PassengerlistComponent } from './components/passengerlist/passengerlist.component';
 
 
 export const routes: Routes = [
@@ -77,6 +78,9 @@ export const routes: Routes = [
             {
                 path:'booking-history', component : BookingComponent,children:[{
                     path:'',component:BookingHistoryComponent
+                },
+                {
+                    path:'passenger-list',component:PassengerlistComponent
                 }
             
         ]
